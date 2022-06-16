@@ -22,7 +22,7 @@ import (
 )
 
 // TrainedModel is the Schema for the TrainedModel API
-// +k8s:openapi-gen=true
+
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".status.url"
@@ -37,7 +37,7 @@ type TrainedModel struct {
 }
 
 // TrainedModelList contains a list of TrainedModel
-// +k8s:openapi-gen=true
+
 // +kubebuilder:object:root=true
 type TrainedModelList struct {
 	metav1.TypeMeta `json:",inline"`
@@ -47,7 +47,7 @@ type TrainedModelList struct {
 }
 
 // TrainedModelSpec defines the TrainedModel spec
-// +k8s:openapi-gen=true
+
 type TrainedModelSpec struct {
 	// parent inference service to deploy to
 	// +required
@@ -58,7 +58,7 @@ type TrainedModelSpec struct {
 }
 
 // ModelSpec describes a TrainedModel
-// +k8s:openapi-gen=true
+
 type ModelSpec struct {
 	// Storage URI for the model repository
 	StorageURI string `json:"storageUri"`

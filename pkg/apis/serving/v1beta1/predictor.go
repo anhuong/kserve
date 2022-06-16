@@ -68,6 +68,7 @@ type PredictorSpec struct {
 var _ Component = &PredictorSpec{}
 
 // PredictorExtensionSpec defines configuration shared across all predictor frameworks
+//+k8s:openapi-gen=true
 type PredictorExtensionSpec struct {
 	// This field points to the location of the trained model which is mounted onto the pod.
 	// +optional

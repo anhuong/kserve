@@ -23,7 +23,6 @@ import (
 )
 
 // InferenceGraph is the Schema for the InferenceGraph API for multiple models
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".status.url"
@@ -45,7 +44,7 @@ type InferenceGraphSpec struct {
 }
 
 // InferenceRouterType constant for inference routing types
-// +k8s:openapi-gen=true
+
 // +kubebuilder:validation:Enum=Sequence;Splitter;Ensemble;Switch
 type InferenceRouterType string
 
@@ -68,8 +67,6 @@ const (
 	// GraphRootNodeName is the root node name.
 	GraphRootNodeName string = "root"
 )
-
-// +k8s:openapi-gen=true
 
 // InferenceRouter defines the router for each InferenceGraph node with one or multiple steps
 //
@@ -188,7 +185,6 @@ type InferenceRouter struct {
 	Steps []InferenceStep `json:"steps,omitempty"`
 }
 
-// +k8s:openapi-gen=true
 // Exactly one InferenceTarget field must be specified
 
 type InferenceTarget struct {
@@ -205,7 +201,6 @@ type InferenceTarget struct {
 }
 
 // InferenceStep defines the inference target of the current step with condition, weights and data.
-// +k8s:openapi-gen=true
 
 type InferenceStep struct {
 	// Unique name for the step within this node
@@ -232,7 +227,6 @@ type InferenceStep struct {
 }
 
 // InferenceGraphStatus defines the InferenceGraph conditions and status
-// +k8s:openapi-gen=true
 
 type InferenceGraphStatus struct {
 	// Conditions for InferenceGraph
@@ -243,7 +237,7 @@ type InferenceGraphStatus struct {
 }
 
 // InferenceGraphList contains a list of InferenceGraph
-// +k8s:openapi-gen=true
+
 // +kubebuilder:object:root=true
 type InferenceGraphList struct {
 	metav1.TypeMeta `json:",inline"`

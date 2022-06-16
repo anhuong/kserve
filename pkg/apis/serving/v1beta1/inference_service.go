@@ -21,6 +21,7 @@ import (
 )
 
 // InferenceServiceSpec is the top level type for this resource
+// +k8s:openapi-gen=true
 type InferenceServiceSpec struct {
 	// Predictor defines the model serving spec
 	// +required
@@ -100,6 +101,7 @@ type InferenceService struct {
 }
 
 // InferenceServiceList contains a list of Service
+// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 type InferenceServiceList struct {
 	metav1.TypeMeta `json:",inline"`

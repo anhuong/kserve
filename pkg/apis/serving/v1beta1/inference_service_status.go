@@ -29,6 +29,7 @@ import (
 )
 
 // InferenceServiceStatus defines the observed state of InferenceService
+// +k8s:openapi-gen=true
 type InferenceServiceStatus struct {
 	// Conditions for the InferenceService <br/>
 	// - PredictorReady: predictor readiness condition; <br/>
